@@ -33,7 +33,7 @@ function showWeatherReport(weather) {
   let cls = document.querySelector(".celsius")
   let img = document.querySelector(".img")
   city.textContent = `${weather.name},${weather.sys.country}`
-  cls.textContent = `${weather.main.temp + ' ' + '°C'}`
+  cls.textContent =  Math.floor(weather.main.temp) + ' °C';
   if (weather.main.temp < 0) {
     img.setAttribute('src', './images/snow.png')
   } else if (weather.main.temp < 10) {
