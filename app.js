@@ -11,9 +11,10 @@ const search = document.querySelector(".search")
 search.addEventListener('keypress', (event)=> {
   if(event.keyCode == 13){
     getWeatherReport(search.value)
-    console.log(search.value)
   }
 })
+
+dataTime();
 
 
 function getWeatherReport(city) {
@@ -39,6 +40,8 @@ function showWeatherReport(weather) {
     img.setAttribute('src', './images/rain.png')
   } else if (weather.main.temp < 15) {
     img.setAttribute('src', './images/clouds.png')
+  } else {
+    img.setAttribute('src', './images/cloudy.png');
   }
 }
 
@@ -58,5 +61,3 @@ function dataTime() {
   yearElement.textContent = year;
   }
 }
-
-dataTime()
